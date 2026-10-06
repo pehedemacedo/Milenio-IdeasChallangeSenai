@@ -1,0 +1,582 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+:root {
+    --bg: #f3f4f6;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --blue: #2563eb;
+    --green: #16a34a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* =========================
+   PAINEL
+========================= */
+
+.painel {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #d8dfe7;
+    border-radius: 15px;
+}
+
+
+/* =========================
+   GRID PRINCIPAL
+========================= */
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: auto auto auto auto auto;
+    gap: 8px;
+}
+
+.parent > div {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 16px;
+}
+
+
+/* =========================
+   PRIMEIROS 8 CARDS
+========================= */
+
+.div1,
+.div2,
+.div3,
+.div4,
+.div5,
+.div6,
+.div7,
+.div8 {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+}
+
+
+/* Títulos */
+
+.div1 h5,
+.div2 h5,
+.div3 h5,
+.div4 h5,
+.div5 h5,
+.div6 h5,
+.div7 h5,
+.div8 h5 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #454647;
+    margin: 0;
+}
+
+
+/* Valores principais */
+
+.div1 > span:not(.lilText),
+.div2 > span:not(.lilText),
+.div3 > span:not(.lilText),
+.div4 > span:not(.lilText) {
+    font-size: 26px;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+
+/* Status das máquinas */
+
+.div5 .inProdution,
+.div6 .inProdution,
+.div7 .notInProduction,
+.div8 .inProdution {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* Texto pequeno */
+
+.lilText {
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    color: #777879 !important;
+}
+
+
+/* Cores dos status */
+
+.inProdution {
+    color: #147e3b;
+    font-weight: bold;
+}
+
+.notInProduction {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+
+/* =========================
+   STATUS DAS MÁQUINAS
+========================= */
+
+.Status {
+    grid-column: 1 / 5;
+    height: fit-content;
+}
+
+
+/* =========================
+   ÁREA DO GRÁFICO
+========================= */
+
+.graficoQtd {
+    grid-column: 1 / 4;
+    grid-row: 4 / 6;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================
+   OPs EM ANDAMENTO
+========================= */
+
+.div11 {
+    grid-column: 4;
+    grid-row: 4 / 6;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================
+   CARD DO GRÁFICO
+========================= */
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    padding: 18px 20px;
+
+    width: 100%;
+    max-width: none;
+    margin: 0;
+
+    min-width: 0;
+}
+
+
+/* =========================
+   CABEÇALHO DO GRÁFICO
+========================= */
+
+.chart-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.chart-head h2 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.chart-head select {
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+
+/* =========================
+   GRÁFICO
+========================= */
+
+.chart {
+    height: 280px;
+    width: 100%;
+
+    margin-top: 12px;
+    padding: 0 6px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    border-bottom: 1px solid #9ca3af;
+
+    overflow: hidden;
+}
+
+
+/* Colunas */
+
+.bar-col {
+    width: 48px;
+    min-width: 48px;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+/* Valor acima da barra */
+
+.bar-value {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+
+/* Barra */
+
+.bar {
+    width: 30px;
+
+    background: var(--blue);
+
+    border-radius: 4px 4px 0 0;
+
+    transition:
+        height .5s ease,
+        filter .15s;
+}
+
+.bar:hover {
+    filter: brightness(1.1);
+}
+
+.bar.today {
+    background: var(--green);
+}
+
+
+/* =========================
+   RÓTULOS DOS DIAS
+========================= */
+
+.labels {
+    display: flex;
+    justify-content: space-around;
+
+    padding: 10px 6px 4px;
+
+    width: 100%;
+}
+
+.labels span {
+    width: 48px;
+    min-width: 48px;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .parent {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .Status {
+        grid-column: 1 / 3;
+    }
+
+    .graficoQtd {
+        grid-column: 1 / 3;
+        grid-row: auto;
+    }
+
+    .div11 {
+        grid-column: 1 / 3;
+        grid-row: auto;
+
+        min-height: 250px;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 520px) {
+
+    .painel {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .parent {
+        grid-template-columns: 1fr;
+    }
+
+    .Status {
+        grid-column: 1;
+    }
+
+    .graficoQtd {
+        grid-column: 1;
+    }
+
+    .div11 {
+        grid-column: 1;
+    }
+
+    .chart {
+        height: 240px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .bar-col {
+        width: 32px;
+        min-width: 32px;
+    }
+
+    .bar {
+        width: 24px;
+    }
+
+    .labels span {
+        width: 32px;
+        min-width: 32px;
+        font-size: 9px;
+    }
+
+    .bar-value {
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================
+   OPs EM ANDAMENTO
+========================= */
+
+.div11 {
+    grid-column: 4;
+    grid-row: 4 / 6;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 16px;
+}
+
+.div11 h5 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2937;
+
+    margin: 0 0 25px 0;
+}
+
+
+/* Cada OP */
+
+.op-item {
+    margin-bottom: 22px;
+}
+
+
+/* Nome + porcentagem */
+
+.op-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.op-info span {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+
+/* Fundo da barra */
+
+.op-bar {
+    width: 100%;
+    height: 13px;
+
+    background-color: #e5e7eb;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+}
+
+
+/* Progresso */
+
+.op-progress {
+    height: 100%;
+
+    background-color: #2563eb;
+
+    border-radius: 7px;
+
+    transition: width 0.4s ease;
+}
+
+/* =========================
+   CARDS DAS MÁQUINAS
+========================= */
+
+.div5,
+.div6,
+.div7,
+.div8 {
+    position: relative;
+    padding: 16px 20px !important;
+
+    border: 1px solid #16a34a;
+    border-left: 8px solid #16a34a;
+
+    min-height: 130px;
+}
+
+
+/* Máquina parada */
+
+.div7 {
+    border-color: #dc2626;
+    border-left-color: #dc2626;
+}
+
+
+/* Nome da máquina */
+
+.div5 h5,
+.div6 h5,
+.div7 h5,
+.div8 h5 {
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #1f2937;
+
+    margin: 0;
+}
+
+
+/* Tipo da máquina */
+
+.machine-type {
+    font-size: 10px !important;
+    font-weight: 400 !important;
+
+    color: #777879 !important;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.machine-status {
+    display: flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    padding: 9px 18px;
+
+    border-radius: 20px;
+
+    font-size: 10px !important;
+    font-weight: 700 !important;
+
+    color: white !important;
+
+    margin-top: 10px;
+}
+
+
+/* Produzindo */
+
+.machine-status.inProdution {
+    background-color: #16a34a;
+}
+
+
+/* Parado */
+
+.machine-status.notInProduction {
+    background-color: #dc2626;
+}
+
+
+/* Bolinha */
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    background-color: white;
+
+    border-radius: 50%;
+
+    margin-right: 5px;
+}
+
+
+/* OP */
+
+.div5 .lilText,
+.div6 .lilText,
+.div7 .lilText,
+.div8 .lilText {
+    margin-top: 10px;
+}

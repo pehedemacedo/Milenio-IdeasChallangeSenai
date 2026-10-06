@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard - Milênio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="img/logo.png" alt="Milênio" class="logo-navbar">
+                <span>Milênio - Chão de Fábrica</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Ordens de Produção</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Ordens de Produção</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Desenhos</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- painel  -->
+    <div class="painel">
+        <h3>Painel de Produção</h3>
+
+
+        <div class="parent">
+            <div class="div1">
+                <h5>Produzidas Hoje</h5>
+                <span>12.480</span>
+                <span class="lilText">peças</span>
+            </div>
+            <div class="div2">
+                <h5>Maquinas Produzindo</h5>
+                <span>3 de 4</span>
+            </div>
+            <div class="div3">
+                <h5>OP's em Produção</h5>
+                <span>5</span>
+            </div>
+            <div class="div4">
+                <h5>Tempo Parado Hoje</h5>
+                <span>1h 42min</span>
+            </div>
+            <div class="div5">
+                <h5>Riscador 01</h5>
+                <span class="machine-type">Riscador</span>
+
+                <span class="machine-status inProdution">
+                    <span class="status-dot"></span>
+                    PRODUZINDO
+                </span>
+
+                <span class="lilText">OP 1042 - 1.240 peças</span>
+            </div>
+
+            <div class="div6">
+                <h5>Impressora 01</h5>
+                <span class="machine-type">Impressora</span>
+
+                <span class="machine-status inProdution">
+                    <span class="status-dot"></span>
+                    PRODUZINDO
+                </span>
+
+                <span class="lilText">OP 1043 - 3.982 peças</span>
+            </div>
+
+            <div class="div7">
+                <h5>Impressora 02 (nova)</h5>
+                <span class="machine-type">Impressora</span>
+
+                <span class="machine-status notInProduction">
+                    <span class="status-dot"></span>
+                    PARADO
+                </span>
+
+                <span class="lilText">OP 1044 - 1.001 peças</span>
+            </div>
+
+            <div class="div8">
+                <h5>Coladeira 01</h5>
+                <span class="machine-type">Coladeira</span>
+
+                <span class="machine-status inProdution">
+                    <span class="status-dot"></span>
+                    PRODUZINDO
+                </span>
+
+                <span class="lilText">OP 1041 - 4.420 peças</span>
+            </div>
+            <div class="Status">
+                <h5>Status das Máquinas</h5>
+            </div>
+            <div class="graficoQtd">
+                <div class="card">
+                    <div class="chart-head">
+                        <select id="filtro">
+                            <option>Todas as máquinas</option>
+                            <option>Riscador 01</option>
+                            <option>Impressora 01</option>
+                            <option>Impressora 02 (nova)</option>
+                            <option>Coladeira 01</option>
+                        </select>
+                    </div>
+
+                    <div class="chart" id="chart"></div>
+                    <div class="labels" id="labels"></div>
+                </div>
+            </div>
+            <div class="div11">
+
+                <h5>OPs em andamento</h5>
+
+                <div class="op-item">
+                    <div class="op-info">
+                        <span>OP 1042</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="op-bar">
+                        <div class="op-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+
+                <div class="op-item">
+                    <div class="op-info">
+                        <span>OP 1043</span>
+                        <span>55%</span>
+                    </div>
+                    <div class="op-bar">
+                        <div class="op-progress" style="width: 55%;"></div>
+                    </div>
+                </div>
+
+                <div class="op-item">
+                    <div class="op-info">
+                        <span>OP 1044</span>
+                        <span>30%</span>
+                    </div>
+                    <div class="op-bar">
+                        <div class="op-progress" style="width: 30%;"></div>
+                    </div>
+                </div>
+
+                <div class="op-item">
+                    <div class="op-info">
+                        <span>OP 1045</span>
+                        <span>10%</span>
+                    </div>
+                    <div class="op-bar">
+                        <div class="op-progress" style="width: 10%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
