@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 700" width="1280" height="700" role="img" aria-label="Desenho técnico DS-1003 revisão 02">
+  <rect width="1280" height="700" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1280" height="8" fill="#C9721B"/>
+  <text x="150" y="120" font-size="22" font-weight="700" fill="#141C24">Display de balcão 300 x 200 x 100</text>
+  <text x="150" y="150" font-size="16" fill="#3C4A57">DS-1003 · revisão 02 · vista frontal e lateral</text>
+  <text x="150" y="180" font-size="15" fill="#3C4A57">Revisão substituída — fundo com encaixe simples.</text>
+  
+    <rect x="150" y="250" width="495" height="330" fill="#F5F0E7" stroke="#141C24" stroke-width="2.5"/>
+    <line x1="216" y1="250" x2="216" y2="580" stroke="#3C4A57" stroke-width="1.2" stroke-dasharray="6 5"/>
+    <text x="224" y="274" font-size="15" fill="#3C4A57">aba 40 mm</text>
+    <line x1="150" y1="614" x2="645" y2="614" stroke="#C9721B" stroke-width="1.6"/>
+    <text x="397.5" y="636" font-size="17" fill="#C9721B" text-anchor="middle">300 mm</text>
+    <line x1="116" y1="250" x2="116" y2="580" stroke="#C9721B" stroke-width="1.6"/>
+    <text x="106" y="415" font-size="17" fill="#C9721B" text-anchor="middle" transform="rotate(-90 106 415)">200 mm</text>
+  
+  
+    <g transform="translate(775 0)">
+      <rect x="0" y="250" width="90.75000000000001" height="330" fill="#F5F0E7" stroke="#141C24" stroke-width="2.5"/>
+      <path d="M0 250 L49.91250000000001 218.2375 L140.66250000000002 218.2375 L90.75000000000001 250" fill="#F5F0E7" stroke="#141C24" stroke-width="2"/>
+      <path d="M90.75000000000001 250 L140.66250000000002 218.2375 L140.66250000000002 548.2375 L90.75000000000001 580" fill="none" stroke="#141C24" stroke-width="2"/>
+      <line x1="0" y1="614" x2="90.75000000000001" y2="614" stroke="#C9721B" stroke-width="1.6"/>
+      <text x="45.37500000000001" y="636" font-size="17" fill="#C9721B" text-anchor="middle">100 mm</text>
+      <text x="45.37500000000001" y="204.2375" font-size="15" fill="#3C4A57" text-anchor="middle">vista lateral</text>
+    </g>
+  
+  
+    <g transform="translate(760 470)">
+      <rect x="0" y="0" width="480" height="200" fill="none" stroke="#141C24" stroke-width="2"/>
+      <line x1="0" y1="46" x2="480" y2="46" stroke="#141C24" stroke-width="1"/>
+      <line x1="0" y1="96" x2="480" y2="96" stroke="#141C24" stroke-width="1"/>
+      <line x1="0" y1="146" x2="480" y2="146" stroke="#141C24" stroke-width="1"/>
+      <text x="16" y="30" font-size="19" font-weight="700" fill="#141C24">MILÊNIO EMBALAGENS — DESENHO TÉCNICO</text>
+      <text x="16" y="76" font-size="16" fill="#3C4A57">Produto: Display de balcão 300 x 200 x 100</text>
+      <text x="16" y="126" font-size="16" fill="#3C4A57">Cliente: Café Serra Azul</text>
+      <text x="16" y="178" font-size="16" fill="#3C4A57">Desenho DS-1003 · Revisão 02 · 2026-08-05</text>
+      <text x="464" y="178" font-size="14" fill="#C9721B" text-anchor="end">escala 1:1</text>
+    </g>
+  
+  <text x="150" y="666" font-size="13" fill="#3C4A57">Documento controlado — a revisão vigente é a única válida para produção.</text>
+</svg>

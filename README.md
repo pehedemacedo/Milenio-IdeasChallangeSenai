@@ -1,115 +1,41 @@
-# 🏭 Milênio · Chão de Fábrica
+# Milênio — Chão de Fábrica (versão simples)
 
-Sistema web para acompanhamento da produção e rastreabilidade no chão de fábrica da **Milênio Embalagens**.
+Protótipo em **HTML, CSS e JavaScript puro**, com Bootstrap 5. Não usa React, build, banco de dados nem servidor de aplicação. Os dados da produção ficam no `localStorage` do navegador.
 
-O projeto foi desenvolvido como parte do **Desafio de Ideias SENAI**, buscando solucionar problemas relacionados ao registro manual de informações, acompanhamento da produção e acesso às Ordens de Produção (OPs) e desenhos técnicos.
+## Como abrir
 
----
+1. Extraia o ZIP.
+2. Para testar no mesmo computador, abra um terminal na pasta e execute `python3 -m http.server 8000`; depois acesse `http://localhost:8000`.
+3. Para ler crachás pela câmera em outro dispositivo, abra o site por um endereço **HTTPS** e permita o acesso à câmera. O vídeo é processado no navegador e não é enviado para um servidor.
 
-## 🎯 Objetivo
+## Login por QR de crachá
 
-Centralizar as principais informações da produção em uma única interface, permitindo que operadores e responsáveis acompanhem o processo de fabricação de forma mais rápida e visual.
+A tela inicial agora mostra somente o leitor. Clique em **Escanear crachá** e aponte a câmera para um QR cujo conteúdo esteja cadastrado no array `BADGES` em `badge-auth.js`. O perfil é escolhido pelo crachá encontrado:
 
-A proposta busca reduzir a dependência de:
+- **Supervisor — Ana Souza:** acesso a todas as telas e ações.
+- **Operador — Carlos Lima:** painel, OPs, máquinas, desenhos em consulta e apontamento de produção, paradas e refugo. Não tem acesso a criação/edição de cadastros, ajustes, alertas, etiquetas administrativas ou ponte para máquinas.
 
-- Registros manuais em papel
-- Consulta de OPs impressas
-- Desenhos técnicos físicos
-- Atualizações manuais no ERP
-- Informações espalhadas entre diferentes locais
+Os dois conteúdos de exemplo configurados no código são `MILENIO|CRACHA|SUP-001` e `MILENIO|CRACHA|OP-001`. Eles não são exibidos na tela. Para usar os crachás físicos existentes, substitua esses valores pelos conteúdos reais dos QR Codes e ajuste nome, identificador e `role` correspondentes. O leitor exige correspondência exata com o valor cadastrado.
 
----
+A sessão vale para a aba atual; use **Sair** para trocar de perfil.
 
-## 🖥️ Funcionalidades
+**Limite importante:** este login é uma demonstração de fluxo e de telas, não uma autenticação segura. Como o projeto é estático em HTML/CSS/JS, a lista e os perfis ficam visíveis no código do navegador e as restrições podem ser contornadas. Para uso real, o QR deve carregar um identificador opaco, validado por servidor, que também confira o usuário, perfil, validade e revogação do crachá.
 
-### 📊 Painel de Produção
+## Telas e funções
 
-O dashboard apresenta uma visão geral da fábrica:
+- **Painel:** indicadores, estado das máquinas, gráfico demonstrativo e progresso das OPs.
+- **Ordens de produção:** filtros, criação de OP (supervisor), iniciar/pausar/retomar e registro de peças.
+- **Máquinas:** cadastro (supervisor), status e registro de produção, paradas e refugo.
+- **Produtos e desenhos:** revisão vigente/histórica, visualização; edição e envio demonstrativo reservados ao supervisor.
+- **Paradas e refugo:** motivos, retomada, duração e peças descartadas.
+- **Alertas e ajustes:** avisos e parâmetros (supervisor).
+- **Etiquetas QR:** etiquetas para máquinas e OPs (supervisor).
+- **Ponte para máquinas:** simulação local de envio de desenho e medidas, sem conexão real.
 
-- Quantidade de peças produzidas
-- Máquinas em produção
-- OPs em andamento
-- Tempo de máquinas paradas
-- Status individual das máquinas
-- Gráfico de produção
-- Progresso das Ordens de Produção
+A câmera requer permissão do navegador e um contexto seguro (`https://` ou `localhost`). A leitura usa jsQR distribuído localmente (`jsQR-LICENSE.txt`); as etiquetas de máquinas/OP usam QRCode.js (`qrcodejs-LICENSE.txt`).
 
-### ⚙️ Máquinas
+## Limites da demonstração
 
-Página destinada ao acompanhamento das máquinas da fábrica.
+A ponte não envia dados a equipamentos. A mensagem “Simulação concluída” e o status `SIMULATED_ONLY` são apenas demonstrativos. Não há banco compartilhado, servidor de usuários, integração ERP, sensores, nem autenticação real.
 
-Cada máquina apresenta:
-
-- Nome e tipo
-- Status atual
-- OP em produção
-- Quantidade produzida
-- Situação de produção
-
-Status disponíveis:
-
-🟢 Produzindo  
-🔴 Parado
-
----
-
-### 📋 Ordens de Produção
-
-Área para consulta das OPs cadastradas.
-
-Informações apresentadas:
-
-- Número da OP
-- Cliente
-- Produto
-- Quantidade produzida
-- Quantidade planejada
-- Prazo
-- Status
-
-Também possui filtros e pesquisa.
-
----
-
-### 📐 Desenhos Técnicos
-
-Centralização dos desenhos relacionados às Ordens de Produção.
-
-A proposta é permitir que o operador consulte o desenho diretamente pelo sistema, evitando a necessidade de utilizar documentos impressos.
-
----
-
-### 🖨️ Tela da Máquina
-
-Página específica para acompanhar uma máquina em produção.
-
-A tela apresenta:
-
-- Máquina atual
-- Status de produção
-- OP vinculada
-- Cliente
-- Produto
-- Prazo
-- Tinta
-- Clichê / Faca
-- Ferramental
-- Produção atual
-- Meta da OP
-- Velocidade de produção
-- Desenho técnico
-- Registro de parada
-- Finalização da OP
-
----
-
-## 🛠️ Tecnologias
-
-O projeto utiliza tecnologias web simples para facilitar a implementação e manutenção:
-
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap 5
-
-Não é necessário utilizar um framework para executar o protótipo.
+Para limpar os dados operacionais de demonstração, remova a chave `milenio-chao-fabrica-v1` do armazenamento do site. Para sair da sessão ou alternar perfil, use **Sair** na barra superior.
