@@ -5,7 +5,7 @@
     { id: 'SUP-001', payload: 'MILENIO|CRACHA|SUP-001', name: 'Ana Souza', role: 'supervisor' },
     { id: 'OP-001', payload: 'MILENIO|CRACHA|OP-001', name: 'Carlos Lima', role: 'operator' }
   ];
-  const OPERATOR_VIEWS = new Set(['painel', 'ops', 'maquinas', 'desenhos', 'paradas']);
+  const OPERATOR_VIEWS = new Set(['painel', 'oee', 'ops', 'maquinas', 'desenhos', 'paradas']);
   const SUPERVISOR_ACTIONS = new Set([
     'new-op', 'new-machine', 'settings', 'new-drawing', 'set-drawing',
     'prepare-transfer', 'transfer-download', 'transfer-copy', 'ack', 'print',
@@ -34,7 +34,7 @@
   function canView(view) {
     if (!activeBadge) return false;
     if (activeBadge.role === 'supervisor') {
-      return ['painel', 'ops', 'maquinas', 'desenhos', 'paradas', 'alertas', 'qrcodes', 'integracao', 'qr-detail'].includes(view);
+      return ['painel', 'oee', 'ops', 'maquinas', 'desenhos', 'paradas', 'alertas', 'qrcodes', 'integracao', 'qr-detail'].includes(view);
     }
     return OPERATOR_VIEWS.has(view);
   }

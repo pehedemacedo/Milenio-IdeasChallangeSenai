@@ -7,7 +7,7 @@
   <title>Milênio — Chão de Fábrica</title>
   <link rel="icon" href="assets/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm" hidden>
@@ -20,6 +20,7 @@
       <div class="collapse navbar-collapse" id="menuPrincipal">
         <div class="navbar-nav ms-lg-4 me-auto">
           <a class="nav-link active" href="#painel" data-view="painel">Painel</a>
+          <a class="nav-link" href="#oee" data-view="oee">OEE</a>
           <a class="nav-link" href="#ops" data-view="ops">Ordens de produção</a>
           <a class="nav-link" href="#maquinas" data-view="maquinas">Máquinas</a>
           <a class="nav-link" href="#desenhos" data-view="desenhos">Desenhos</a>
@@ -29,7 +30,6 @@
           <a class="nav-link" href="#integracao" data-view="integracao">Ponte para máquinas</a>
         </div>
         <div class="navbar-text d-flex align-items-center gap-2 py-2 py-lg-0">
-          <span class="demo-dot"></span><span class="small text-white-50">Demonstração local</span>
           <span id="badgeProfile" class="small text-white-50 ms-lg-2"></span>
           <button class="btn btn-sm btn-outline-light" data-action="badge-logout" hidden>Sair</button>
           <button class="btn btn-sm btn-outline-light ms-lg-2" data-action="settings">Ajustes</button>
@@ -58,7 +58,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="qrcode.min.js"></script>
   <script src="jsQR.min.js"></script>
-  <script src="badge-auth.js?v=3"></script>
-  <script src="app.js?v=6"></script>
+  <script src="badge-auth.js?v=4"></script>
+  <script src="accessibility.js?v=3"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>
